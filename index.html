@@ -919,7 +919,7 @@
       const subject = data.get('subject') || 'Message depuis saturnindevins.com';
       const body = encodeURIComponent(`De : ${data.get('name')} <${data.get('email')}>\n\n${data.get('message')}`);
       setTimeout(() => {
-        window.location.href = `mailto:saturnin.paulet@ehl.ch?subject=${encodeURIComponent(subject)}&body=${body}`;
+        window.location.href = `mailto:saturnin.devins@lemanfp.com?subject=${encodeURIComponent(subject)}&body=${body}`;
         btn.textContent = 'Message envoyé ✓';
         btn.style.background = '#30d158';
         setTimeout(() => { e.target.reset(); btn.textContent = 'Envoyer le message'; btn.style.background = ''; btn.disabled = false; }, 3000);
