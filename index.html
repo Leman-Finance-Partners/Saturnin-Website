@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saturnin Devins — Entrepreneur & Analyste Macro</title>
+  <meta name="description" content="Entrepreneur, investisseur et analyste macro. Fondateur de Crypto & Macro, Léman Finance Partners et ForYield.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white:      #ffffff;
+      --off-white:  #f5f5f7;
+      --surface:    #fbfbfd;
+      --text-1:     #1d1d1f;
+      --text-2:     #6e6e73;
+      --text-3:     #a1a1a6;
+      --accent:     #0071e3;
+      --accent-2:   #147ce5;
+      --border:     rgba(0,0,0,0.08);
+      --border-md:  rgba(0,0,0,0.12);
+      --shadow-sm:  0 2px 8px rgba(0,0,0,0.06);
+      --shadow-md:  0 8px 32px rgba(0,0,0,0.08);
+      --shadow-lg:  0 24px 64px rgba(0,0,0,0.10);
+      --radius-sm:  10px;
+      --radius-md:  16px;
+      --radius-lg:  24px;
+      --nav-h:      64px;
+      --font:       -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { font-family: var(--font); background: var(--white); color: var(--text-1); line-height: 1.6; overflow-x: hidden; }
+    ::selection { background: rgba(0,113,227,0.15); }
+
+    h1, h2, h3, h4 { letter-spacing: -0.02em; line-height: 1.1; }
+    .display-xl { font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.0; }
+    .display-lg { font-size: clamp(2.2rem, 4vw, 3.8rem); font-weight: 700; letter-spacing: -0.025em; }
+    .display-md { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 600; letter-spacing: -0.02em; }
+    .body-lg { font-size: 1.1875rem; line-height: 1.65; }
+    .body-md { font-size: 1rem; line-height: 1.6; }
+    .label { font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; }
+
+    .container { width: 100%; max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+    .container-wide { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+    /* ── Nav ─────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      height: var(--nav-h); display: flex; align-items: center;
+      transition: background 0.4s, border-color 0.4s;
+      border-bottom: 1px solid transparent;
+    }
+    nav.scrolled {
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom-color: var(--border);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-1); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.9375rem; color: var(--text-1); text-decoration: none; opacity: 0.85; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    .nav-cta { display: flex; align-items: center; gap: 12px; }
+    .btn-nav {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; background: var(--text-1); color: var(--white);
+      border-radius: 980px; font-size: 0.875rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-nav:hover { background: #333; transform: translateY(-1px); }
+    .btn-nav-ghost {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 7px 17px; background: transparent; color: var(--text-1);
+      border: 1px solid var(--border-md); border-radius: 980px;
+      font-size: 0.875rem; font-weight: 500; text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-nav-ghost:hover { background: var(--off-white); }
+
+    /* ── Hero ────────────────────────────────────────── */
+    #hero {
+      min-height: 100svh; padding: calc(var(--nav-h) + 80px) 0 100px;
+      display: flex; align-items: center; background: var(--white);
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+    .hero-label { color: var(--accent); margin-bottom: 24px; }
+    .hero-title { margin-bottom: 28px; }
+    .hero-title span { color: var(--accent); }
+    .hero-desc { color: var(--text-2); margin-bottom: 40px; max-width: 480px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 28px; background: var(--accent); color: var(--white);
+      border-radius: 980px; font-size: 1rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,113,227,0.3); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 27px; background: var(--white); color: var(--text-1);
+      border: 1px solid var(--border-md); border-radius: 980px;
+      font-size: 1rem; font-weight: 500; text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-secondary:hover { background: var(--off-white); transform: translateY(-2px); }
+
+    .hero-stats { display: flex; gap: 40px; margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .stat-num { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; }
+    .stat-label { font-size: 0.8125rem; color: var(--text-2); margin-top: 2px; }
+
+    .hero-visual { position: relative; }
+    .video-wrapper {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-lg); background: #0a0a0a; aspect-ratio: 16/10;
+    }
+    .video-wrapper iframe { width: 100%; height: 100%; border: none; display: block; }
+    .video-badge {
+      position: absolute; bottom: -16px; right: -16px;
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 12px 18px; box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 10px; border: 1px solid var(--border);
+    }
+    .video-badge-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #30d158;
+      flex-shrink: 0; box-shadow: 0 0 0 3px rgba(48,209,88,0.2);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(48,209,88,0.2); }
+      50% { box-shadow: 0 0 0 6px rgba(48,209,88,0.1); }
+    }
+    .video-badge-text { font-size: 0.8125rem; font-weight: 500; }
+
+    /* ── Section header ──────────────────────────────── */
+    .section-header { text-align: center; margin-bottom: 72px; }
+    .section-label { color: var(--accent); margin-bottom: 16px; }
+    .section-title { margin-bottom: 20px; }
+    .section-desc { color: var(--text-2); max-width: 560px; margin: 0 auto; }
+
+    /* ── About ───────────────────────────────────────── */
+    #about { padding: 120px 0; background: var(--off-white); }
+
+    /* Intro */
+    .about-intro { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; margin-bottom: 80px; }
+    .about-intro-text {}
+    .about-intro-text .about-eyebrow { color: var(--accent); margin-bottom: 20px; }
+    .about-intro-text h2 { margin-bottom: 28px; }
+    .about-intro-text p { color: var(--text-2); font-size: 1.0625rem; line-height: 1.65; }
+    .photo-frame {
+      width: 100%; aspect-ratio: 3/4; border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--border);
+      background: #e8f0fe;
+    }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
+
+    /* Stats strip */
+    .about-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border-md);
+      border-radius: var(--radius-md); overflow: hidden;
+      margin-bottom: 80px;
+      border: 1px solid var(--border-md);
+    }
+    .about-stat-item {
+      background: var(--white); padding: 28px 24px; text-align: center;
+    }
+    .about-stat-num { font-size: 2rem; font-weight: 700; letter-spacing: -0.03em; color: var(--text-1); }
+    .about-stat-label { font-size: 0.8125rem; color: var(--text-2); margin-top: 4px; line-height: 1.4; }
+
+    /* Chapters */
+    .about-chapters { display: flex; flex-direction: column; gap: 0; }
+    .about-chapter {
+      display: grid; grid-template-columns: 200px 1fr; gap: 48px;
+      padding: 48px 0; border-top: 1px solid var(--border);
+    }
+    .about-chapter:last-child { border-bottom: 1px solid var(--border); }
+    .about-chapter-label { padding-top: 4px; }
+    .about-chapter-label span { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+    .about-chapter-body {}
+    .about-chapter-body h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; color: var(--text-1); }
+    .about-chapter-body p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; }
+    .about-chapter-body p + p { margin-top: 12px; }
+    .about-chapter-body strong { color: var(--text-1); font-weight: 600; }
+
+    /* Kite block */
+    .about-kite {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      align-items: center; padding: 48px 0; border-top: 1px solid var(--border);
+    }
+    .kite-photo { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 4/3; box-shadow: var(--shadow-md); border: 1px solid var(--border); }
+    .kite-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .kite-text {}
+    .kite-text h3 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 12px; }
+    .kite-text p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.65; }
+    .kite-text p + p { margin-top: 12px; }
+
+    @media (max-width: 900px) {
+      .about-intro { grid-template-columns: 1fr; gap: 40px; }
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+      .about-chapter { grid-template-columns: 1fr; gap: 12px; }
+      .about-kite { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── Timeline ────────────────────────────────────── */
+    #timeline { padding: 120px 0; background: var(--white); }
+    .timeline-track { position: relative; max-width: 800px; margin: 0 auto; }
+    .timeline-line {
+      position: absolute; left: 50%; top: 0; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--border-md) 5%, var(--border-md) 95%, transparent);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: grid; grid-template-columns: 1fr 48px 1fr;
+      margin-bottom: 56px;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .timeline-item.visible { opacity: 1; transform: translateY(0); }
+    .timeline-item:nth-child(even) .timeline-content { grid-column: 3; }
+    .timeline-item:nth-child(even) .timeline-empty { grid-column: 1; }
+    .timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; }
+    .timeline-item:nth-child(odd) .timeline-empty { grid-column: 3; }
+    .timeline-center { grid-column: 2; display: flex; justify-content: center; align-items: flex-start; padding-top: 6px; position: relative; z-index: 1; }
+    .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--white); border: 2.5px solid var(--accent); flex-shrink: 0; transition: transform 0.3s, background 0.3s; }
+    .timeline-item:hover .timeline-dot { transform: scale(1.4); background: var(--accent); }
+    .timeline-content { padding: 0 24px; }
+    .timeline-date { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+    .timeline-title { font-size: 1rem; font-weight: 600; color: var(--text-1); margin-bottom: 4px; }
+    .timeline-org { font-size: 0.875rem; color: var(--text-2); margin-bottom: 8px; }
+    .timeline-desc { font-size: 0.875rem; color: var(--text-3); line-height: 1.5; }
+    .timeline-tag { display: inline-block; margin-top: 8px; padding: 3px 10px; background: rgba(0,113,227,0.08); color: var(--accent); border-radius: 980px; font-size: 0.75rem; font-weight: 500; }
+
+    /* ── Photo strip ─────────────────────────────────── */
+    .photo-strip {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin-top: 72px;
+    }
+    .photo-strip-item {
+      border-radius: var(--radius-md); overflow: hidden;
+      aspect-ratio: 4/3; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+    }
+    .photo-strip-item.visible { opacity: 1; transform: translateY(0); }
+    .photo-strip-item:hover { box-shadow: var(--shadow-md); }
+    .photo-strip-item img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+
+    /* ── Projects ────────────────────────────────────── */
+    #projects { padding: 120px 0; background: var(--off-white); }
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .project-card {
+      background: var(--white); border-radius: var(--radius-lg); border: 1px solid var(--border);
+      overflow: hidden; display: flex; flex-direction: column;
+      opacity: 0; transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s;
+    }
+    .project-card.visible { opacity: 1; transform: translateY(0); }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .project-card-hero {
+      height: 200px; display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .project-card-hero img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+    .project-card-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.1) 100%);
+    }
+    .project-card-hero-cm  { background: linear-gradient(135deg,#0a0a14,#0d1b2a); }
+    .project-card-hero-lfp { background: linear-gradient(135deg,#0c1a2e,#112238); }
+    .project-card-hero-fy  { background: linear-gradient(135deg,#0a1628,#0f2040); }
+    .project-logo-text { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; color: var(--white); text-align: center; position: relative; z-index: 1; }
+    .project-logo-sub { font-size: 0.7rem; font-weight: 400; color: rgba(255,255,255,0.5); margin-top: 4px; letter-spacing: 0.04em; }
+    .project-grid-bg { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px); background-size: 32px 32px; }
+    .project-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+    .project-tag { display: inline-flex; align-items: center; padding: 4px 10px; background: rgba(0,113,227,0.07); color: var(--accent); border-radius: 980px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; margin-bottom: 16px; align-self: flex-start; }
+    .project-name { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; }
+    .project-desc { font-size: 0.9375rem; color: var(--text-2); line-height: 1.55; flex: 1; margin-bottom: 24px; }
+    .project-link { display: inline-flex; align-items: center; gap: 6px; color: var(--accent); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: gap 0.2s; }
+    .project-link:hover { gap: 10px; }
+
+    /* ── Media ───────────────────────────────────────── */
+    #media { padding: 120px 0; background: var(--white); }
+    .media-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: start; }
+    .media-featured {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden;
+      opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .media-featured.visible { opacity: 1; transform: translateY(0); }
+    .media-video-embed { aspect-ratio: 16/9; position: relative; overflow: hidden; background: #000; }
+    .media-video-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+    .media-featured-body { padding: 24px 28px 28px; }
+    .media-featured-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+    .media-featured-title { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.01em; color: var(--text-1); margin-bottom: 8px; }
+    .media-featured-desc { font-size: 0.9375rem; color: var(--text-2); line-height: 1.55; }
+
+    .media-list { display: flex; flex-direction: column; gap: 16px; }
+    .media-item {
+      background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md);
+      padding: 16px; display: flex; gap: 14px; align-items: flex-start; cursor: pointer;
+      opacity: 0; transform: translateX(24px);
+      transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.2s, box-shadow 0.2s;
+    }
+    .media-item.visible { opacity: 1; transform: translateX(0); }
+    .media-item:hover { border-color: var(--accent); box-shadow: var(--shadow-sm); }
+    .media-item a { text-decoration: none; display: flex; gap: 14px; align-items: flex-start; width: 100%; }
+    .media-thumb {
+      width: 88px; height: 60px; border-radius: var(--radius-sm); flex-shrink: 0;
+      overflow: hidden; position: relative; background: #0a0a14;
+    }
+    .media-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .media-thumb-icon {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0.3);
+    }
+    .media-thumb-icon svg { width: 20px; height: 20px; color: white; }
+    .media-info {}
+    .media-platform { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600; color: var(--accent); margin-bottom: 4px; }
+    .media-title { font-size: 0.875rem; font-weight: 500; color: var(--text-1); line-height: 1.4; margin-bottom: 4px; }
+    .media-meta { font-size: 0.8125rem; color: var(--text-3); }
+
+    .press-row { display: flex; align-items: center; gap: 32px; flex-wrap: wrap; justify-content: center; padding: 48px 0 0; border-top: 1px solid var(--border); margin-top: 64px; }
+    .press-label { font-size: 0.8125rem; color: var(--text-3); font-weight: 500; letter-spacing: 0.04em; }
+    .press-badge { font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text-3); opacity: 0.5; transition: opacity 0.2s; }
+    .press-badge:hover { opacity: 0.9; }
+
+    /* ── Contact ─────────────────────────────────────── */
+    #contact { padding: 120px 0; background: var(--off-white); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .contact-info p { color: var(--text-2); margin-bottom: 40px; margin-top: 20px; }
+    .contact-links { display: flex; flex-direction: column; gap: 12px; }
+    .contact-link-item {
+      display: flex; align-items: center; gap: 12px; padding: 14px 18px;
+      background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md);
+      text-decoration: none; color: var(--text-1); font-size: 0.9375rem; font-weight: 500;
+      transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .contact-link-item:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+    .contact-link-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-link-icon.li { background: #0A66C2; }
+    .contact-link-icon.web { background: var(--off-white); border: 1px solid var(--border); }
+    .contact-link-icon svg { width: 18px; height: 18px; }
+
+    .contact-photo {
+      margin-top: 32px; border-radius: var(--radius-md); overflow: hidden;
+      height: 200px; box-shadow: var(--shadow-sm); border: 1px solid var(--border);
+    }
+    .contact-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+
+    .contact-form { background: var(--white); border-radius: var(--radius-lg); padding: 40px; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+    .contact-form h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 24px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 0.875rem; font-weight: 500; margin-bottom: 8px; }
+    .form-control { width: 100%; padding: 12px 16px; background: var(--off-white); border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: var(--font); font-size: 0.9375rem; color: var(--text-1); outline: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    .form-control:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(0,113,227,0.12); background: var(--white); }
+    .form-control::placeholder { color: var(--text-3); }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .btn-submit { width: 100%; padding: 14px; background: var(--text-1); color: var(--white); border: none; border-radius: var(--radius-sm); font-family: var(--font); font-size: 1rem; font-weight: 500; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .btn-submit:hover { background: #333; transform: translateY(-1px); }
+
+    /* ── Footer ──────────────────────────────────────── */
+    footer { padding: 48px 0; background: var(--text-1); color: rgba(255,255,255,0.6); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-logo { font-size: 1rem; font-weight: 700; color: var(--white); letter-spacing: -0.02em; }
+    .footer-links { display: flex; gap: 24px; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--white); }
+    .footer-copy { font-size: 0.8125rem; }
+
+    /* ── Animations ──────────────────────────────────── */
+    .fade-up { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ── Responsive ──────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { order: -1; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-photo { order: -1; max-width: 320px; margin: 0 auto; }
+      .about-badge { left: 0; bottom: -16px; }
+      .timeline-line { left: 24px; transform: none; }
+      .timeline-item { grid-template-columns: 48px 1fr; }
+      .timeline-item:nth-child(odd) .timeline-content,
+      .timeline-item:nth-child(even) .timeline-content { grid-column: 2; text-align: left; }
+      .timeline-item:nth-child(odd) .timeline-empty,
+      .timeline-item:nth-child(even) .timeline-empty { display: none; }
+      .timeline-center { grid-column: 1; justify-content: center; }
+      .photo-strip { grid-template-columns: 1fr 1fr; }
+      .photo-strip-item:last-child { display: none; }
+      .projects-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+      .media-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .nav-links { display: none; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .container, .container-wide { padding: 0 20px; }
+      .hero-stats { gap: 24px; flex-wrap: wrap; }
+      .photo-strip { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Nav ───────────────────────────────────────── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">Saturnin Devins</a>
+      <ul class="nav-links">
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#timeline">Parcours</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#media">Médias</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://www.linkedin.com/in/saturnin-devins-8934a813a" target="_blank" rel="noopener" class="btn-nav-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a href="#contact" class="btn-nav">Me contacter</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ── Hero ──────────────────────────────────────── -->
+  <section id="hero">
+    <div class="container-wide">
+      <div class="hero-inner">
+        <div>
+          <p class="label hero-label">Entrepreneur · Investisseur · Analyste</p>
+          <h1 class="display-xl hero-title">
+            L'intelligence<br>financière au service<br>de votre <span>capital</span>.
+          </h1>
+          <p class="body-lg hero-desc">
+            Une expertise à l'intersection de la macroéconomie globale, des actifs numériques et de l'innovation technologique pour transformer la complexité des marchés en opportunités claires.
+          </p>
+          <div class="hero-actions">
+            <a href="https://www.crypto-macro.com/" target="_blank" rel="noopener" class="btn-primary">
+              Lire Crypto & Macro
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="#about" class="btn-secondary">En savoir plus</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="stat-num">50K+</div>
+              <div class="stat-label">lecteurs quotidiens</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">3</div>
+              <div class="stat-label">entreprises actives</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">10</div>
+              <div class="stat-label">années d'expérience</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">+10M€</div>
+              <div class="stat-label">d'actifs sous gestion</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="video-wrapper">
+            <iframe
+              src="https://videos.pantheon-recherche.com?name=2025_06_4edc1108-bac2-42f1-8a32-8bdf840b87f2&autoplay=false&showProgressBar=true&showRemainingTime=true&showFullScreenToggle=true&muted=false&showPlayButton=true&showSpeedRate=false&skipTime=false&scaleThumbnailToFit=true&animationAutoplay=false&responsive=true"
+              allowfullscreen allow="autoplay; fullscreen"></iframe>
+          </div>
+          <div class="video-badge">
+            <div class="video-badge-dot"></div>
+            <span class="video-badge-text">Interview BFM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+
+      <!-- Intro -->
+      <div class="about-intro fade-up">
+        <div class="about-intro-text">
+          <p class="label about-eyebrow">Qui est Saturnin Devins</p>
+          <h2 class="display-md" style="margin-bottom:28px;">L'un des analystes<br>les plus respectés<br>des marchés.</h2>
+          <p>Saturnin Devins est l'un des analystes les plus respectés des marchés financiers et un entrepreneur prolifique qui rassemble des communautés d'investisseurs pour transformer leur façon d'apprendre, d'investir et de penser.</p>
+          <p style="margin-top:16px;">Investisseur depuis <strong>2016</strong>, il a construit une expertise pointue à l'intersection de la <strong>macroéconomie globale, des marchés financiers et des actifs numériques</strong>.</p>
+        </div>
+        <div class="photo-frame" style="max-height:480px;">
+          <img src="photos/SATURNIN_DEVINS_1.jpg" alt="Saturnin Devins" loading="lazy">
+        </div>
+      </div>
+
+
+      <!-- Chapters -->
+      <div class="about-chapters">
+
+        <div class="about-chapter fade-up">
+          <div class="about-chapter-label"><span>Crypto & Macro</span></div>
+          <div class="about-chapter-body">
+            <h3>La newsletter numéro 1 en France</h3>
+            <p>En 2024, Saturnin lance <strong>Crypto & Macro</strong>, sa newsletter gratuite dans laquelle il développe ses idées d'investissement. En quelques années, Crypto & Macro est devenu une publication renommée et est aujourd'hui lu par plus de <strong>50 000 lecteurs</strong>.</p>
+            <a href="https://www.crypto-macro.com/" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:16px;display:inline-flex;">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="about-chapter fade-up">
+          <div class="about-chapter-label"><span>Léman Finance Partners</span></div>
+          <div class="about-chapter-body">
+            <h3>Démocratiser l'information financière</h3>
+            <p>En 2026, Saturnin a fondé <strong>Léman Finance Partners</strong>, un média qui vise à démocratiser l'information sur les marchés financiers via des publications à haute valeur ajoutée comme <strong>Master Crypto</strong>, <strong>Ligne Directe Trading</strong> ou encore le <strong>Club Privé Crypto</strong>.</p>
+          </div>
+        </div>
+
+        <div class="about-chapter fade-up">
+          <div class="about-chapter-label"><span>ForYield</span></div>
+          <div class="about-chapter-body">
+            <h3>ForYield : la gestion d'actifs crypto régulée en Europe</h3>
+            <p>Saturnin est également cofondateur de <strong>ForYield</strong>, une société d'investissement spécialisée dans la gestion d'actifs numériques. ForYield offre aux investisseurs particuliers et institutionnels un accès privilégié aux meilleures stratégies de rendement en crypto, grâce à l'expertise de Saturnin et son équipe.</p>
+            <a href="https://www.for-yield.com/" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:16px;display:inline-flex;">En savoir plus</a>
+          </div>
+        </div>
+
+        <div class="about-chapter fade-up">
+          <div class="about-chapter-label"><span>Avant cela</span></div>
+          <div class="about-chapter-body">
+            <h3>L'école de l'excellence</h3>
+            <p>Avant 2024, Saturnin a occupé des postes à responsabilités dans le secteur de la Finance : chez <strong>Panthéon Recherche</strong>, où il était Directeur des Publications Investissements pendant plus de 4 ans.</p>
+            <p>Au cours de son parcours, il a bénéficié de l'expertise de certains des experts en investissements les plus talentueux de notre époque.</p>
+          </div>
+        </div>
+
+        <div class="about-chapter fade-up">
+          <div class="about-chapter-label"><span>Et aujourd'hui</span></div>
+          <div class="about-chapter-body">
+            <h3>Une voix suivie partout en France</h3>
+            <p>Aujourd'hui, Saturnin vit en Suisse au bord du lac Léman. Ses recherches, ses vidéos et ses podcasts ont été visionnés <strong>plusieurs millions de fois</strong>, et plus de <strong>100 000 personnes</strong> suivent ses réflexions quotidiennes à travers ses différentes plateformes.</p>
+          </div>
+        </div>
+
+        <!-- Kite block -->
+        <div class="about-kite fade-up">
+          <div class="kite-photo">
+            <img src="photos/kite.jpg" alt="Saturnin Devins - Kitesurf" loading="lazy">
+          </div>
+          <div class="kite-text">
+            <span class="label" style="color:var(--accent); display:block; margin-bottom:16px;">Temps libre</span>
+            <h3>Aventurier dans l'âme</h3>
+            <p>Durant son temps libre, Saturnin est un grand sportif et un aventurier. Fasciné par le <strong>kitesurf</strong>, sport qu'il pratique aux quatre coins du monde.</p>
+            <p>Où qu'il voyage, il adore découvrir la gastronomie et les vins locaux — mais sa préférence reste la gastronomie italienne.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Timeline ──────────────────────────────────── -->
+  <section id="timeline">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="label section-label">Parcours</p>
+        <h2 class="display-lg section-title">Une trajectoire<br>construite sur la conviction.</h2>
+        <p class="body-md section-desc">Chaque étape a affiné une compréhension des marchés et des cycles, dont a découlé une stratégie d'investissement éprouvée.</p>
+      </div>
+
+      <div class="timeline-track">
+        <div class="timeline-line"></div>
+
+        <!-- 1 — LFP -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Mai 2026 · Présent</div>
+            <div class="timeline-title">Co-Founder & CEO</div>
+            <div class="timeline-org">Léman Finance Partners · Lausanne</div>
+            <div class="timeline-desc">Société de recherche et de publications financières basée à Lausanne, à la convergence des marchés de capitaux et des actifs numériques.</div>
+            <span class="timeline-tag">Finance · Conseil</span>
+          </div>
+          <div class="timeline-center"><div class="timeline-dot" style="border-color:var(--accent);background:var(--accent);"></div></div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <!-- 2 — ForYield -->
+        <div class="timeline-item">
+          <div class="timeline-empty"></div>
+          <div class="timeline-center"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-date">Juillet 2025 · Présent</div>
+            <div class="timeline-title">Co-Founder</div>
+            <div class="timeline-org">ForYield</div>
+            <div class="timeline-desc">Société de gestion d'actifs & conseil DeFi — permettant de générer jusqu'à 10% net par an sur stablecoins et cryptos grâce à des stratégies institutionnelles.</div>
+            <span class="timeline-tag">DeFi · Asset Management</span>
+          </div>
+        </div>
+
+        <!-- 3 — Crypto & Macro -->
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <div class="timeline-date">Janvier 2025 · Présent</div>
+            <div class="timeline-title">Founder & CEO</div>
+            <div class="timeline-org">Crypto & Macro</div>
+            <div class="timeline-desc">Fondation de la première lettre d'information crypto indépendante en France. En quelques mois : <strong style="color:var(--text-1)">40 000 lecteurs quotidiens</strong>. Un media d'autorité à l'intersection de la macro et des actifs numériques.</div>
+            <span class="timeline-tag">Media · Newsletter</span>
+          </div>
+          <div class="timeline-center"><div class="timeline-dot"></div></div>
+          <div class="timeline-empty"></div>
+        </div>
+
+        <!-- 4 — Panthéon -->
+        <div class="timeline-item">
+          <div class="timeline-empty"></div>
+          <div class="timeline-center"><div class="timeline-dot"></div></div>
+          <div class="timeline-content">
+            <div class="timeline-date">2021 · 2024</div>
+            <div class="timeline-title">Directeur des Publications Investissement</div>
+            <div class="timeline-org">Panthéon Recherche · Suisse</div>
+            <div class="timeline-desc">Direction éditoriale de l'ensemble des publications financières et crypto du groupe en Suisse. Intervenant et expert en analyse des marchés financiers et cryptoactifs. Développement d'une méthodologie macro rigoureuse sur 3 ans, auprès d'une communauté de milliers d'abonnés.</div>
+            <span class="timeline-tag">Direction éditoriale</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Photo strip -->
+      <div class="photo-strip">
+        <div class="photo-strip-item">
+          <img src="photos/SATURNIN_DEVINS_2.jpg" alt="Saturnin Devins - Présentation analyse macro" loading="lazy">
+        </div>
+        <div class="photo-strip-item" style="transition-delay:0.1s">
+          <img src="photos/AUDITORIUM_15.jpg" alt="Saturnin Devins - Conférence investisseurs" loading="lazy">
+        </div>
+        <div class="photo-strip-item" style="transition-delay:0.2s">
+          <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Saturnin Devins - Sommet Panthéon 2025" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ──────────────────────────────────── -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="label section-label">Ventures</p>
+        <h2 class="display-lg section-title">Trois structures.<br>Une seule vision.</h2>
+        <p class="body-md section-desc">Des projets complémentaires qui forment un écosystème cohérent autour de l'investissement macro et des actifs numériques.</p>
+      </div>
+
+      <div class="projects-grid">
+
+        <!-- Crypto & Macro -->
+        <div class="project-card">
+          <div class="project-card-hero project-card-hero-cm">
+            <div class="project-grid-bg"></div>
+            <div class="project-logo-text">
+              Crypto & Macro
+              <div class="project-logo-sub">MÉDIA INDÉPENDANT</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Media · Newsletter</span>
+            <h3 class="project-name">Crypto & Macro</h3>
+            <p class="project-desc">La première lettre d'information crypto indépendante en France. Chaque jour, 40 000 lecteurs reçoivent une analyse rigoureuse à l'intersection de la macroéconomie et des cryptoactifs.</p>
+            <a href="https://www.crypto-macro.com/" target="_blank" rel="noopener" class="project-link">
+              Visiter le site
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Léman Finance Partners -->
+        <div class="project-card" style="transition-delay:0.1s">
+          <div class="project-card-hero project-card-hero-lfp">
+            <div class="project-grid-bg"></div>
+            <div class="project-logo-text">
+              Léman Finance<br>Partners
+              <div class="project-logo-sub">RECHERCHE & PUBLICATIONS</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">Finance · Recherche</span>
+            <h3 class="project-name">Léman Finance Partners</h3>
+            <p class="project-desc">Société de recherche et de publications financières basée à Lausanne, à la convergence des marchés de capitaux traditionnels et des actifs numériques de nouvelle génération.</p>
+            <span class="project-link" style="color:var(--text-3);cursor:default;">En cours de lancement</span>
+          </div>
+        </div>
+
+        <!-- ForYield -->
+        <div class="project-card" style="transition-delay:0.2s">
+          <div class="project-card-hero project-card-hero-fy">
+            <div class="project-grid-bg"></div>
+            <div class="project-logo-text">
+              ForYield
+              <div class="project-logo-sub">GESTION D'ACTIFS & CONSEIL</div>
+            </div>
+          </div>
+          <div class="project-body">
+            <span class="project-tag">DeFi · Asset Management</span>
+            <h3 class="project-name">ForYield</h3>
+            <p class="project-desc">Société de gestion d'actifs & conseil DeFi. Jusqu'à 10% net par an sur vos stablecoins et cryptos grâce à des stratégies de rendements institutionnelles, accessibles à tous.</p>
+            <a href="https://www.for-yield.com/" target="_blank" rel="noopener" class="project-link">Visiter le site →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Media ─────────────────────────────────────── -->
+  <section id="media">
+    <div class="container">
+      <div class="section-header fade-up">
+        <p class="label section-label">Médias & Interviews</p>
+        <h2 class="display-lg section-title">La voix derrière<br>les marchés.</h2>
+        <p class="body-md section-desc">Podcasts, conférences, interviews TV — retrouvez les interventions de Saturnin sur les grands sujets de la macro et du secteur crypto.</p>
+      </div>
+
+      <div class="media-grid">
+
+        <!-- Featured: Podcast Au Coffre -->
+        <div class="media-featured">
+          <div class="media-video-embed">
+            <iframe
+              src="https://www.youtube.com/embed/qMAkDRdOIu8"
+              allowfullscreen
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              loading="lazy">
+            </iframe>
+          </div>
+          <div class="media-featured-body">
+            <div class="media-featured-label">Podcast · Au Coffre</div>
+            <h3 class="media-featured-title">Crypto & Macro sur "Au Coffre"</h3>
+            <p class="media-featured-desc">Analyse macro, Bitcoin et stratégies d'investissement — une conversation profonde sur les cycles de marché et la vision derrière Crypto & Macro.</p>
+          </div>
+        </div>
+
+        <div class="media-list">
+
+          <!-- BFM Business -->
+          <div class="media-item">
+            <a href="#" onclick="return false;">
+              <div class="media-thumb">
+                <img src="photos/Crypto-and-Macro-2103451.webp" alt="BFM Business" loading="lazy">
+                <div class="media-thumb-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="media-info">
+                <div class="media-platform">BFM Business · Focus Entreprises</div>
+                <div class="media-title">Crypto & Macro : le média indépendant spécialisé dans l'investissement crypto</div>
+                <div class="media-meta">BFM TV · 2025</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Sommet Panthéon -->
+          <div class="media-item" style="transition-delay:0.1s">
+            <a href="#" onclick="return false;">
+              <div class="media-thumb">
+                <img src="photos/SATURNIN_DEVINS_6.jpg" alt="Sommet Panthéon Recherche 2025" loading="lazy">
+                <div class="media-thumb-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="media-info">
+                <div class="media-platform">Conférence · Sommet 2025</div>
+                <div class="media-title">Chute de l'Euro : quelles solutions pour les épargnants ?</div>
+                <div class="media-meta">Panthéon Recherche · Paris, Mars 2025</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Conférence Bitcoin -->
+          <div class="media-item" style="transition-delay:0.2s">
+            <a href="#" onclick="return false;">
+              <div class="media-thumb">
+                <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Analyse Bitcoin Bull Market" loading="lazy">
+                <div class="media-thumb-icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="media-info">
+                <div class="media-platform">Présentation · Analyse</div>
+                <div class="media-title">Bitcoin Bull Market : anatomie des cycles et stratégies de positionnement</div>
+                <div class="media-meta">Conférence investisseurs · 2025</div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Vision -->
+          <div class="media-item" style="transition-delay:0.3s">
+            <a href="#hero">
+              <div class="media-thumb" style="background:#0a0a14">
+                <div class="media-thumb-icon" style="background:rgba(0,113,227,0.3)">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+              <div class="media-info">
+                <div class="media-platform">Vision · Janvier 2025</div>
+                <div class="media-title">Ma vision pour 2025 et au-delà — macro, Bitcoin et nouveaux paradigmes</div>
+                <div class="media-meta">Voir la vidéo →</div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="press-row fade-up">
+        <span class="press-label">Vu dans</span>
+        <span class="press-badge">BFM TV</span>
+        <span class="press-badge">BFM Business</span>
+        <span class="press-badge">Panthéon Recherche</span>
+        <span class="press-badge">Au Coffre</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ────────────────────────────────────── -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="fade-up">
+          <p class="label" style="color:var(--accent); margin-bottom:16px;">Contact</p>
+          <h2 class="display-md">Travaillons<br>ensemble.</h2>
+          <p class="body-md">Vous souhaitez collaborer, investir, ou simplement échanger sur les marchés ? Je suis disponible pour des opportunités sélectives.</p>
+
+          <div class="contact-links">
+            <a href="https://www.linkedin.com/in/saturnin-devins-8934a813a" target="_blank" rel="noopener" class="contact-link-item">
+              <div class="contact-link-icon li">
+                <svg viewBox="0 0 24 24" fill="white"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              Suivre sur LinkedIn
+            </a>
+            <a href="https://www.crypto-macro.com/" target="_blank" rel="noopener" class="contact-link-item">
+              <div class="contact-link-icon web">
+                <svg viewBox="0 0 24 24" fill="none" stroke="var(--text-2)" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              </div>
+              crypto-macro.com
+            </a>
+          </div>
+
+        </div>
+
+        <div class="fade-up" style="transition-delay:0.15s">
+          <div class="contact-form">
+            <h3>Envoyer un message</h3>
+            <form onsubmit="handleSubmit(event)">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Prénom & Nom</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Jean Dupont" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="jean@exemple.com" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Sujet</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Collaboration, investissement, média...">
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Votre message..." required></textarea>
+              </div>
+              <button type="submit" class="btn-submit" id="submitBtn">Envoyer le message</button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────────── -->
+  <footer>
+    <div class="container-wide">
+      <div class="footer-inner">
+        <div class="footer-logo">Saturnin Devins</div>
+        <ul class="footer-links">
+          <li><a href="#about">À propos</a></li>
+          <li><a href="https://www.crypto-macro.com/" target="_blank">Crypto & Macro</a></li>
+          <li><a href="https://www.linkedin.com/in/saturnin-devins-8934a813a" target="_blank">LinkedIn</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="footer-copy">© 2026 Saturnin Devins. Lausanne, Suisse.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 16);
+    }, { passive: true });
+
+    // Intersection Observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-up, .timeline-item, .project-card, .media-featured, .media-item, .photo-strip-item').forEach(el => observer.observe(el));
+
+    // Contact form
+    function handleSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      const data = new FormData(e.target);
+      btn.textContent = 'Envoi en cours...';
+      btn.disabled = true;
+      const subject = data.get('subject') || 'Message depuis saturnindevins.com';
+      const body = encodeURIComponent(`De : ${data.get('name')} <${data.get('email')}>\n\n${data.get('message')}`);
+      setTimeout(() => {
+        window.location.href = `mailto:saturnin.paulet@ehl.ch?subject=${encodeURIComponent(subject)}&body=${body}`;
+        btn.textContent = 'Message envoyé ✓';
+        btn.style.background = '#30d158';
+        setTimeout(() => { e.target.reset(); btn.textContent = 'Envoyer le message'; btn.style.background = ''; btn.disabled = false; }, 3000);
+      }, 600);
+    }
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const t = document.querySelector(this.getAttribute('href'));
+        if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
+      });
+    });
+  </script>
+
+</body>
+</html>
