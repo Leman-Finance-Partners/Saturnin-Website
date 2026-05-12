@@ -203,6 +203,61 @@
       .about-kite { grid-template-columns: 1fr; gap: 32px; }
     }
 
+    /* ── Vision ─────────────────────────────────────── */
+    #vision { padding: 120px 0; background: #08101f; }
+    #vision .section-label { color: rgba(255,255,255,0.4); }
+    #vision .section-title { color: #ffffff; }
+    #vision .section-desc { color: rgba(255,255,255,0.45); }
+
+    .vision-block { padding: 72px 0; border-top: 1px solid rgba(255,255,255,0.08); }
+    .vision-block-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .vision-block-grid.reverse { direction: rtl; }
+    .vision-block-grid.reverse > * { direction: ltr; }
+    .vision-block-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .vision-block-title { font-size: clamp(1.4rem, 2.2vw, 1.875rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.15; color: #ffffff; margin-bottom: 24px; }
+    .vision-block-text p { font-size: 0.9375rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+    .vision-block-text p + p { margin-top: 14px; }
+    .vision-block-text strong { color: rgba(255,255,255,0.82); font-weight: 600; }
+
+    .vision-quote-card {
+      background: rgba(0,113,227,0.07); border: 1px solid rgba(0,113,227,0.22);
+      border-radius: var(--radius-lg); padding: 40px 36px;
+    }
+    .vision-quote-mark { font-size: 5rem; line-height: 0.8; color: rgba(0,113,227,0.35); font-family: Georgia, serif; display: block; margin-bottom: 12px; }
+    .vision-quote-card blockquote { font-size: 1.0625rem; font-style: italic; line-height: 1.65; color: rgba(255,255,255,0.82); }
+
+    .vision-defi-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg); padding: 36px; display: flex; flex-direction: column; gap: 20px;
+    }
+    .vision-defi-stat { font-size: clamp(2.4rem, 4vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; color: var(--accent); }
+    .vision-defi-caption { font-size: 0.875rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+    .vision-defi-divider { height: 1px; background: rgba(255,255,255,0.08); }
+    .vision-defi-quote { font-size: 0.9375rem; font-style: italic; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+    .vision-method-header { text-align: center; padding-top: 72px; margin-top: 72px; border-top: 1px solid rgba(255,255,255,0.08); }
+    .vision-method-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .vision-method-title { font-size: clamp(1.4rem, 2.2vw, 1.875rem); font-weight: 700; letter-spacing: -0.025em; line-height: 1.2; color: #ffffff; }
+
+    .vision-method-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 48px; }
+    .vision-method-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg); padding: 36px 32px;
+      transition: background 0.3s, border-color 0.3s;
+    }
+    .vision-method-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(0,113,227,0.3); }
+    .vision-method-icon { width: 44px; height: 44px; background: rgba(0,113,227,0.12); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+    .vision-method-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .vision-method-card h4 { font-size: 1.0625rem; font-weight: 600; letter-spacing: -0.02em; color: #ffffff; margin-bottom: 12px; }
+    .vision-method-card p { font-size: 0.9rem; color: rgba(255,255,255,0.48); line-height: 1.65; }
+    .vision-method-card strong { color: rgba(255,255,255,0.78); font-weight: 600; }
+
+    @media (max-width: 900px) {
+      .vision-block-grid { grid-template-columns: 1fr; gap: 40px; }
+      .vision-block-grid.reverse { direction: ltr; }
+      .vision-method-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── Timeline ────────────────────────────────────── */
     #timeline { padding: 120px 0; background: var(--white); }
     .timeline-track { position: relative; max-width: 800px; margin: 0 auto; }
@@ -411,6 +466,7 @@
       <a href="#hero" class="nav-logo">Saturnin Devins</a>
       <ul class="nav-links">
         <li><a href="#about">À propos</a></li>
+        <li><a href="#vision">Vision</a></li>
         <li><a href="#timeline">Parcours</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#media">Médias</a></li>
@@ -559,6 +615,104 @@
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ── Vision ────────────────────────────────────── -->
+  <section id="vision">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="section-header fade-up">
+        <p class="label section-label">Vision et Méthode</p>
+        <h2 class="display-lg section-title">Thèse d'Investissement</h2>
+      </div>
+
+      <!-- Block 1 : Le Naufrage des Monnaies Fiat -->
+      <div class="vision-block fade-up">
+        <div class="vision-block-grid">
+          <div class="vision-block-text">
+            <div class="vision-block-label">Un fil rouge</div>
+            <h3 class="vision-block-title">Le Naufrage<br>des Monnaies Fiat</h3>
+            <p>Saturnin Devins fonde son approche sur un constat implacable : l'effondrement progressif du système monétaire traditionnel.</p>
+            <p>À l'image du denier romain dont la pureté d'argent a été diluée jusqu'à la ruine, l'euro est aujourd'hui devenu une <strong>« monnaie fondante »</strong>.</p>
+            <p>L'impression monétaire massive des banques centrales depuis 2008 a mécaniquement érodé le pouvoir d'achat de <strong>40 % en deux décennies</strong>. Face à cette destruction programmée de l'épargne, il voit le Bitcoin comme un véritable radeau de sauvetage financier.</p>
+          </div>
+          <div>
+            <div class="vision-quote-card">
+              <span class="vision-quote-mark">"</span>
+              <blockquote>Le Bitcoin est la meilleure réserve de valeur impartiale et limitée pour protéger votre patrimoine face à l'effondrement du système monétaire traditionnel.</blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 2 : Devenez votre propre banque -->
+      <div class="vision-block fade-up">
+        <div class="vision-block-grid reverse">
+          <div class="vision-block-text">
+            <div class="vision-block-label">Finance décentralisée</div>
+            <h3 class="vision-block-title">Devenez votre<br>propre banque</h3>
+            <p>Pionnier du secteur ultra-innovant de la <strong>Finance Décentralisée (DeFi)</strong> dès 2020, Saturnin Devins a su tirer profit du secret le mieux gardé d'Internet pour s'affranchir des intermédiaires bancaires traditionnels — alors que le secteur ne représente encore que <strong>0,2 % de la finance mondiale</strong>.</p>
+            <p>Pendant que les banques conservent la majorité des profits en offrant des intérêts dérisoires, la DeFi permet à l'investisseur de <strong>capter directement la valeur</strong> en devenant sa propre banque.</p>
+            <p>En exploitant ces inefficacités de marché, il a développé des stratégies de rendement aux performances exceptionnelles qui lui permettent de vivre de ses rentes.</p>
+          </div>
+          <div>
+            <div class="vision-defi-card">
+              <div>
+                <div class="vision-defi-stat">0,2 %</div>
+                <div class="vision-defi-caption">de la finance mondiale — une opportunité de génération encore à ses débuts</div>
+              </div>
+              <div class="vision-defi-divider"></div>
+              <div class="vision-defi-quote">"Pendant que les banques capturent les profits, la DeFi vous permet de devenir votre propre banque — et de capter cette valeur vous-même."</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Block 3 : La Méthode -->
+      <div class="fade-up">
+        <div class="vision-method-header">
+          <div class="vision-method-label">Méthode de travail</div>
+          <h3 class="vision-method-title">Une approche scientifique :<br>le Signal contre le Bruit</h3>
+        </div>
+        <div class="vision-method-grid">
+
+          <div class="vision-method-card">
+            <div class="vision-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4>Analyse de Signal</h4>
+            <p>Il ignore les rumeurs des réseaux sociaux, le marketing des projets et le discours des médias traditionnels. Son attention se porte <strong>exclusivement sur les données statistiques</strong> et les flux financiers réels.</p>
+          </div>
+
+          <div class="vision-method-card">
+            <div class="vision-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+            </div>
+            <h4>Discipline et Psychologie</h4>
+            <p>Il considère que le mental est le premier facteur de réussite. Sa méthode vise à <strong>éliminer l'avidité et la peur</strong> pour ne suivre que des tendances haussières confirmées.</p>
+          </div>
+
+          <div class="vision-method-card">
+            <div class="vision-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h4>Souveraineté Financière</h4>
+            <p>Il privilégie la <strong>conservation sécurisée des actifs</strong> pour garantir une souveraineté financière totale à ses lecteurs, indépendante de tout intermédiaire.</p>
+          </div>
+
+          <div class="vision-method-card">
+            <div class="vision-method-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+            <h4>Rigueur Suisse</h4>
+            <p>Diplômé en macroéconomie en Suisse, il transforme la volatilité, souvent perçue comme un risque, en une <strong>opportunité de performance exceptionnelle</strong> à long terme.</p>
+          </div>
+
+        </div>
+      </div>
+
     </div>
   </section>
 
