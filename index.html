@@ -3,9 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Saturnin Devins — Entrepreneur & Analyste Macro</title>
-  <meta name="description" content="Entrepreneur, investisseur et analyste macro. Fondateur de Crypto & Macro, Léman Finance Partners et ForYield.">
+  <title>Saturnin Devins | Expert Cryptomonnaies & Macro — Fondateur de Crypto & Macro</title>
+  <meta name="description" content="Saturnin Devins : expert en cryptomonnaies, macroéconomie et investissement. Fondateur de Crypto & Macro, la newsletter n°1 en France suivie par +50 000 investisseurs. Découvrez sa vision des marchés.">
+  <meta name="keywords" content="Saturnin Devins, Crypto & Macro, cryptomonnaies, Bitcoin, macroéconomie, investissement, newsletter crypto, DeFi, Finance Décentralisée, Léman Finance Partners, ForYield, analyste macro">
+  <meta name="author" content="Saturnin Devins">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://leman-finance-partners.github.io/Saturnin-Website/">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://leman-finance-partners.github.io/Saturnin-Website/">
+  <meta property="og:title" content="Saturnin Devins | Expert Cryptomonnaies & Macro">
+  <meta property="og:description" content="Fondateur de Crypto & Macro, la newsletter n°1 en France. Expert en Bitcoin, macroéconomie et investissement. +50 000 lecteurs quotidiens.">
+  <meta property="og:image" content="https://leman-finance-partners.github.io/Saturnin-Website/photos/SATURNIN_DEVINS_1.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="Saturnin Devins">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Saturnin Devins | Expert Cryptomonnaies & Macro">
+  <meta name="twitter:description" content="Fondateur de Crypto & Macro, la newsletter n°1 en France. Expert en Bitcoin, macroéconomie et investissement. +50 000 lecteurs quotidiens.">
+  <meta name="twitter:image" content="https://leman-finance-partners.github.io/Saturnin-Website/photos/SATURNIN_DEVINS_1.jpg">
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Saturnin Devins",
+    "jobTitle": "Entrepreneur, Analyste Macro & Expert Cryptomonnaies",
+    "description": "Expert en cryptomonnaies, macroéconomie et investissement. Fondateur de Crypto & Macro, newsletter n°1 en France.",
+    "url": "https://leman-finance-partners.github.io/Saturnin-Website/",
+    "image": "https://leman-finance-partners.github.io/Saturnin-Website/photos/SATURNIN_DEVINS_1.jpg",
+    "sameAs": [
+      "https://www.linkedin.com/in/saturnin-devins-8934a813a",
+      "https://www.crypto-macro.com/"
+    ],
+    "knowsAbout": ["Cryptomonnaies", "Bitcoin", "Macroéconomie", "Finance Décentralisée", "Investissement", "DeFi"],
+    "worksFor": [
+      {"@type": "Organization", "name": "Crypto & Macro", "url": "https://www.crypto-macro.com/"},
+      {"@type": "Organization", "name": "Léman Finance Partners"},
+      {"@type": "Organization", "name": "ForYield", "url": "https://www.for-yield.com/"}
+    ]
+  }
+  </script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -31,7 +70,8 @@
     }
 
     html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
-    body { font-family: var(--font); background: var(--white); color: var(--text-1); line-height: 1.6; overflow-x: hidden; }
+    body { font-family: var(--font); background: var(--white); color: var(--text-1); line-height: 1.6; overflow-x: hidden; user-select: none; -webkit-user-select: none; }
+    input, textarea, select { user-select: text; -webkit-user-select: text; }
     ::selection { background: rgba(0,113,227,0.15); }
 
     h1, h2, h3, h4 { letter-spacing: -0.02em; line-height: 1.1; }
@@ -450,6 +490,7 @@
       .media-grid { grid-template-columns: 1fr; }
       .contact-grid { grid-template-columns: 1fr; gap: 48px; }
       .nav-links { display: none; }
+      .btn-nav-ghost { display: none; }
       .form-row { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
@@ -551,7 +592,7 @@
           <p style="margin-top:16px;">Investisseur depuis <strong>2016</strong>, il a construit une expertise pointue à l'intersection de la <strong>macroéconomie globale, des marchés financiers et des actifs numériques</strong>.</p>
         </div>
         <div class="photo-frame" style="max-height:480px;">
-          <img src="photos/SATURNIN_DEVINS_1.jpg" alt="Saturnin Devins" loading="lazy">
+          <img src="photos/SATURNIN_DEVINS_1.jpg" alt="Saturnin Devins" loading="lazy" decoding="async">
         </div>
       </div>
 
@@ -606,7 +647,7 @@
         <!-- Kite block -->
         <div class="about-kite fade-up">
           <div class="kite-photo">
-            <img src="photos/kite.jpg" alt="Saturnin Devins - Kitesurf" loading="lazy">
+            <img src="photos/kite.jpg" alt="Saturnin Devins - Kitesurf" loading="lazy" decoding="async">
           </div>
           <div class="kite-text">
             <span class="label" style="color:var(--accent); display:block; margin-bottom:16px;">Temps libre</span>
@@ -787,13 +828,13 @@
       <!-- Photo strip -->
       <div class="photo-strip">
         <div class="photo-strip-item">
-          <img src="photos/SATURNIN_DEVINS_2.jpg" alt="Saturnin Devins - Présentation analyse macro" loading="lazy">
+          <img src="photos/SATURNIN_DEVINS_2.jpg" alt="Saturnin Devins - Présentation analyse macro" loading="lazy" decoding="async">
         </div>
         <div class="photo-strip-item" style="transition-delay:0.1s">
-          <img src="photos/AUDITORIUM_15.jpg" alt="Saturnin Devins - Conférence investisseurs" loading="lazy">
+          <img src="photos/AUDITORIUM_15.jpg" alt="Saturnin Devins - Conférence investisseurs" loading="lazy" decoding="async">
         </div>
         <div class="photo-strip-item" style="transition-delay:0.2s">
-          <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Saturnin Devins - Sommet Panthéon 2025" loading="lazy">
+          <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Saturnin Devins - Sommet Panthéon 2025" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -886,7 +927,7 @@
               src="https://www.youtube.com/embed/qMAkDRdOIu8"
               allowfullscreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              loading="lazy">
+              loading="lazy" decoding="async">
             </iframe>
           </div>
           <div class="media-featured-body">
@@ -902,7 +943,7 @@
           <div class="media-item">
             <a href="https://www.bfmtv.com/economie/professionnels/focus-entreprises/crypto-macro-le-media-independant-specialise-dans-l-investissement-crypto_AB-202506300015.html" target="_blank" rel="noopener">
               <div class="media-thumb">
-                <img src="photos/Crypto-and-Macro-2103451.webp" alt="BFM Business" loading="lazy">
+                <img src="photos/Crypto-and-Macro-2103451.webp" alt="BFM Business" loading="lazy" decoding="async">
                 <div class="media-thumb-icon">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </div>
@@ -919,7 +960,7 @@
           <div class="media-item" style="transition-delay:0.1s">
             <a href="https://videos.pantheon-recherche.com/?name=2025_06_ef119f23-7d45-4b07-8a8c-6f169e1b67fe&autoplay=false&showProgressBar=true&showRemainingTime=true&showFullScreenToggle=true&muted=false&showPlayButton=true&showSpeedRate=false&skipTime=false&scaleThumbnailToFit=false&animationAutoplay=false&responsive=true" target="_blank" rel="noopener">
               <div class="media-thumb">
-                <img src="photos/SATURNIN_DEVINS_6.jpg" alt="Sommet Panthéon Recherche 2025" loading="lazy">
+                <img src="photos/SATURNIN_DEVINS_6.jpg" alt="Sommet Panthéon Recherche 2025" loading="lazy" decoding="async">
                 <div class="media-thumb-icon">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </div>
@@ -936,7 +977,7 @@
           <div class="media-item" style="transition-delay:0.2s">
             <a href="https://www.linkedin.com/posts/bitcoin-trop-t%C3%B4t-pour-racheter-ou-d%C3%A9j%C3%A0-ugcPost-7457775093536985089-xkUm?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAACHjdO8BaBF5_ulBiqqZOMmSTKZJD8uU9hc" target="_blank" rel="noopener">
               <div class="media-thumb">
-                <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Analyse Bitcoin" loading="lazy">
+                <img src="photos/SATURNIN_DEVINS_5.jpg" alt="Analyse Bitcoin" loading="lazy" decoding="async">
                 <div class="media-thumb-icon">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </div>
@@ -953,7 +994,7 @@
           <div class="media-item" style="transition-delay:0.3s">
             <a href="https://www.crypto-macro.com/pourquoi-je-fais-le-plein-de-bitcoin-en-2026/" target="_blank" rel="noopener">
               <div class="media-thumb">
-                <img src="photos/SATURNIN_DEVINS_2.jpg" alt="Vision 2026" loading="lazy">
+                <img src="photos/SATURNIN_DEVINS_2.jpg" alt="Vision 2026" loading="lazy" decoding="async">
                 <div class="media-thumb-icon">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                 </div>
@@ -1091,6 +1132,11 @@
         if (t) { e.preventDefault(); window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' }); }
       });
     });
+
+    // Copy & right-click protection
+    document.addEventListener('copy', e => e.preventDefault());
+    document.addEventListener('cut', e => e.preventDefault());
+    document.addEventListener('contextmenu', e => e.preventDefault());
   </script>
 
 </body>
