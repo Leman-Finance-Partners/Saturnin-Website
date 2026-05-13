@@ -99,7 +99,7 @@
       border-bottom-color: var(--border);
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-    .nav-logo { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-1); text-decoration: none; }
+    .nav-logo { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.02em; color: var(--text-1); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
     .nav-links a { font-size: 0.9375rem; color: var(--text-1); text-decoration: none; opacity: 0.85; transition: opacity 0.2s; }
     .nav-links a:hover { opacity: 1; }
@@ -242,6 +242,51 @@
       .about-stats { grid-template-columns: repeat(2, 1fr); }
       .about-chapter { grid-template-columns: 1fr; gap: 12px; }
       .about-kite { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    /* ── Stratégie ──────────────────────────────────── */
+    #strategy { padding: 120px 0; background: var(--surface); }
+    .strategy-list { margin-top: 64px; }
+    .strategy-pillar {
+      display: grid; grid-template-columns: 72px 1fr; gap: 0 32px;
+      padding: 48px 0; border-top: 1px solid var(--border);
+    }
+    .strategy-pillar:last-of-type { border-bottom: 1px solid var(--border); }
+    .strategy-num {
+      font-size: 2.5rem; font-weight: 700; letter-spacing: -0.04em;
+      color: var(--accent); opacity: 0.2; line-height: 1; padding-top: 4px;
+    }
+    .strategy-pillar-body h3 {
+      font-size: 1.1875rem; font-weight: 600; letter-spacing: -0.02em;
+      color: var(--text-1); margin-bottom: 14px;
+    }
+    .strategy-pillar-body p { font-size: 0.9375rem; color: var(--text-2); line-height: 1.7; }
+    .strategy-pillar-body p + p { margin-top: 10px; }
+    .strategy-pillar-body strong { color: var(--text-1); font-weight: 600; }
+    .strategy-pillar-body em { font-style: italic; }
+
+    .strategy-quote-card {
+      margin-top: 80px; background: #08101f;
+      border-radius: var(--radius-lg); overflow: hidden;
+      display: grid; grid-template-columns: 320px 1fr;
+    }
+    .strategy-quote-photo { min-height: 420px; }
+    .strategy-quote-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+    .strategy-quote-body {
+      padding: 56px 52px; display: flex; flex-direction: column;
+      justify-content: center; gap: 20px;
+    }
+    .strategy-quote-mark { font-size: 4.5rem; line-height: 0.7; color: rgba(0,113,227,0.25); font-family: Georgia, serif; }
+    .strategy-quote-text p { font-size: 1rem; color: rgba(255,255,255,0.72); line-height: 1.75; }
+    .strategy-quote-text p + p { margin-top: 16px; }
+    .strategy-quote-text strong { color: rgba(255,255,255,0.92); font-weight: 600; }
+    .strategy-quote-sig { font-size: 0.875rem; color: rgba(255,255,255,0.3); font-style: italic; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.08); }
+
+    @media (max-width: 900px) {
+      .strategy-pillar { grid-template-columns: 56px 1fr; gap: 0 20px; }
+      .strategy-quote-card { grid-template-columns: 1fr; }
+      .strategy-quote-photo { min-height: 280px; }
+      .strategy-quote-body { padding: 40px 32px; }
     }
 
     /* ── Vision ─────────────────────────────────────── */
@@ -509,6 +554,7 @@
       <ul class="nav-links">
         <li><a href="#about">À propos</a></li>
         <li><a href="#vision">Vision</a></li>
+        <li><a href="#strategy">Méthode</a></li>
         <li><a href="#timeline">Parcours</a></li>
         <li><a href="#projects">Projets</a></li>
         <li><a href="#media">Médias</a></li>
@@ -753,6 +799,84 @@
             <p>Diplômé en macroéconomie en Suisse, il transforme la volatilité, souvent perçue comme un risque, en une <strong>opportunité de performance exceptionnelle</strong> à long terme.</p>
           </div>
 
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Stratégie ─────────────────────────────────── -->
+  <section id="strategy">
+    <div class="container">
+
+      <div class="section-header fade-up">
+        <p class="label section-label">Méthode</p>
+        <h2 class="display-lg section-title">Le cadre de ma stratégie<br>d'investissement</h2>
+        <p class="body-md section-desc">Ma démarche repose sur cinq piliers complémentaires.</p>
+      </div>
+
+      <div class="strategy-list">
+
+        <div class="strategy-pillar fade-up">
+          <div class="strategy-num">01</div>
+          <div class="strategy-pillar-body">
+            <h3>Une approche fondamentale et technique</h3>
+            <p>Mon travail repose sur un cadre d'analyse destiné à estimer la « juste valeur » du Bitcoin et des principales cryptos.</p>
+            <p>Je combine des indicateurs crypto <em>on-chain</em> (cohortes d'acheteurs, prix réalisé…) avec des données macroéconomiques (liquidité globale, M2…).</p>
+            <p>L'analyse technique (volumes, moyennes mobiles…) intervient ensuite pour confirmer les décisions et optimiser le timing d'entrée et de sortie. C'est une approche <strong>disciplinée, patiente, fondée sur les données</strong> et la conviction.</p>
+          </div>
+        </div>
+
+        <div class="strategy-pillar fade-up">
+          <div class="strategy-num">02</div>
+          <div class="strategy-pillar-body">
+            <h3>Un cadrage macroéconomique strict</h3>
+            <p>Mon analyse du marché crypto est directement liée à mon analyse macro (liquidité, croissance, cycle économique).</p>
+            <p>Je monitore plus de <strong>50 indicateurs</strong> en continu, afin que vous n'ayez pas à le faire. Une conviction forte a toujours guidé mon travail : pour comprendre la crypto, il faut comprendre la macro.</p>
+          </div>
+        </div>
+
+        <div class="strategy-pillar fade-up">
+          <div class="strategy-num">03</div>
+          <div class="strategy-pillar-body">
+            <h3>Une conviction long terme assumée</h3>
+            <p>Je pense que le Bitcoin atteindra un jour une capitalisation équivalente à celle de l'or, soit environ <strong>×10</strong> par rapport à son niveau actuel.</p>
+            <p>Je pense également que la finance mondiale et le commerce vont reposer sur des blockchains publiques comme Ethereum. Pour cette raison, j'investis principalement avec un horizon long terme, et je ne "short" jamais ce marché.</p>
+          </div>
+        </div>
+
+        <div class="strategy-pillar fade-up">
+          <div class="strategy-num">04</div>
+          <div class="strategy-pillar-body">
+            <h3>Jouer les grands cycles de liquidité</h3>
+            <p>Je me positionne pour capter les grands cycles, avec de fortes allocations sur les actifs qui composent le cœur de portefeuille.</p>
+            <p>Je suis avide quand la majorité des particuliers ont peur (comme fin 2022), et plus prudent quand ils deviennent avides (comme fin 2025).</p>
+          </div>
+        </div>
+
+        <div class="strategy-pillar fade-up">
+          <div class="strategy-num">05</div>
+          <div class="strategy-pillar-body">
+            <h3>Rotation stratégique à l'intérieur des cycles</h3>
+            <p>Je commence généralement un cycle avec une plus forte exposition au Bitcoin, qui mène souvent la reprise. À mesure que la hausse du BTC progresse, le capital se déplace progressivement vers les altcoins.</p>
+            <p>Mon rôle est d'identifier ces rotations <strong>avant qu'elles ne deviennent évidentes</strong>.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Photo + citation -->
+      <div class="strategy-quote-card fade-up">
+        <div class="strategy-quote-photo">
+          <img src="photos/saturnin-portrait-bw.png" alt="Saturnin Devins" loading="lazy" decoding="async">
+        </div>
+        <div class="strategy-quote-body">
+          <span class="strategy-quote-mark">"</span>
+          <div class="strategy-quote-text">
+            <p>Ma philosophie s'inspire des modèles développés par <strong>Warren Buffett, Charlie Munger, George Soros et Ray Dalio</strong>. Je cherche à rester curieux, lucide sur mes biais, et intellectuellement honnête.</p>
+            <p>Je veille à ce que mes intérêts restent toujours alignés avec les vôtres : <strong>j'investis sur mes propres recommandations</strong> — skin in the game — avec un cadre transparent et vérifiable.</p>
+          </div>
+          <p class="strategy-quote-sig">— Saturnin Devins, Fondateur de Crypto &amp; Macro</p>
         </div>
       </div>
 
